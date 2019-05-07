@@ -1,6 +1,79 @@
 var WebSocketServer = require('websocket').server;
 var http 			= require('http');
 var safeJson	    = require('safe-json-stringify');
+const axios = require('axios');
+
+
+let preguntas = [
+	{
+	  id:1,
+	  pregunta:"What are the advantages of a three- tier client-server configuration as compared with a single-tier or two-tier configuration."
+	},
+	{
+	  id:2,
+	  pregunta:"What type of abap dictionary view is created on the database during activation"
+	}
+  ]
+	
+  let respuestas = [
+	
+	  {
+		id:1,
+		respuesta:"a.simple scalability.",
+		correcta:""
+	  },
+	  {
+		id:1,
+		respuesta:"b.simpler administration.",
+		correcta:""
+	  },
+	  {
+		id:1,
+		respuesta:"c.simple processes.",
+		correcta:""
+	  },
+	  {
+		id:1,
+		respuesta:"d. none of the above.",
+		correcta: "x"
+	  },
+	  {
+		id:2,
+		respuesta:"a.Maintenace view",
+		correcta:""
+	  },
+	  {
+		id:2,
+		respuesta:"b.Projection view",
+		correcta:""
+	  },
+	  {
+		id:2,
+		respuesta:"c.Database view ",
+		correcta:""
+	  },
+	  {
+		id:2,
+		respuesta:"d.Activation view",
+		correcta:"x"
+	  }
+  ]
+  
+  
+  let array = []
+  preguntas.forEach( pregunta =>{
+	 let obj = {
+		consigna:pregunta.pregunta,
+		idpreg: pregunta.id,
+		opciones: respuestas
+		  .filter( res => res.id == pregunta.id )
+		  .map( item =>({item: item.respuesta.slice(0,1), texto: item.respuesta.slice(2)})),
+		respuesta: respuestas.find(item => item.correcta.length).respuesta.slice(0,1)
+	  }
+	
+	  array.push(obj)
+  })
+
 
 var juego = {
 				clientes   	   : new Array(),
@@ -8,35 +81,58 @@ var juego = {
 				preguntas  	   : [
 									{
 										idpreg   : 1,
-										consigna : "¿Cual es la capital de Croacia?",
+										consigna : "Which of the following improvement options does not require any SAP preparation?",
 										opciones : [
-														{item:"a",texto:"Buenos aires"},
-														{item:"b",texto:"Pekin"},
-														{item:"c",texto:"Zagreb"},
-														{item:"d",texto:"Waterloo"}
+														{item:"a",texto:"Implicit enhancement point"},
+														{item:"b",texto:"Explicit enhancement point"},
+														{item:"c",texto:"Explicit enhancement sections"},
+														{item:"d",texto:"New BAdIs"}
 												   ],
-										respuesta : "c"
+										respuesta : "a"
 									},
 									{
 										idpreg   : 2,									
-										consigna : "¿Quien es enemigo de GOKU DBZ?",
+										consigna : "In addition to the primary key of an internal table, how many secondary indexes can you define for an internal table?",
 										opciones : [
-														{item:"a",texto:"Bulma"},
-														{item:"b",texto:"Piccoro"},
-														{item:"c",texto:"Freezer"}
+														{item:"a",texto:"0"},
+														{item:"b",texto:"15"},
+														{item:"c",texto:"10"},
+														{item:"d",texto:"1"}
 												   ],
-										respuesta : "c"												   
+										respuesta : "b"												   
 									},
 									{
-										idpreg   : 3,
-										consigna : "Simbolo quimico del Sodio",
+										idpreg   : 3,									
+										consigna : "What happens when an authorization verification fails?",
 										opciones : [
-														{item:"a",texto:"Na"},
-														{item:"b",texto:"H20"},
-														{item:"c",texto:"Fe"},
-														{item:"d",texto:"Co"}
+														{item:"a",texto:"The program is terminated."},
+														{item:"b",texto:"A CX_AUTH_FAILED type exception is raised."},
+														{item:"c",texto:"A type E message is displayed."},
+														{item:"d",texto:"The system field SY-SUBRC is set to a value other than zero."}
+												   ],
+										respuesta : "d"												   
+									},
+									{
+										idpreg   : 4,									
+										consigna : "To which of the following should you assign newly created SAP repository objects?",
+										opciones : [
+														{item:"a",texto:"Package"},
+														{item:"b",texto:"Function group"},
+														{item:"c",texto:"Transport task"},
+														{item:"d",texto:"Transport request"}
 												   ],
 										respuesta : "a"												   
+									},
+									{
+										idpreg   : 5,
+										consigna : "What process is used to establish the automatic transport of data between the view control?",
+										opciones : [
+														{item:"a",texto:"View assembly"},
+														{item:"b",texto:"Data migration"},
+														{item:"c",texto:"Data binding"},
+														{item:"d",texto:"Context mapping"}
+												   ],
+										respuesta : "c"												   
 									}								
 								 ],
 				respuestas     : [],

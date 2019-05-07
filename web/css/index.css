@@ -1,0 +1,118 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: whitesmoke;
+}
+
+#body_cliente{
+    margin: 0px;
+    padding: 0px;
+    background-color: whitesmoke;
+}
+
+#contenedor {
+    background: white;
+    margin: auto;			
+    margin-top: 30px;
+    text-align: center;
+}
+
+#cont_activos{    
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#titulo{
+    background-color: whitesmoke;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#status{    
+    border-bottom: 1px solid;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#activos{    
+    padding-top: 15px;
+}
+
+/* Panel Principal */
+#contenedor_izq {
+    float: left;
+    border: 1px solid black;
+    border-right-width: 0px;
+}
+
+#preguntas{
+    background-color: #1875D2;    
+    padding-top: 15px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+#div_preguntas {
+    background: black;
+    color:white;			
+}
+
+#txt_pregunta {
+    color: white;
+    /* margin: auto;
+    margin-top: 20px;
+    width: 450px; */
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    word-break: break-all;
+    font-family: 'geosanslight';
+    font-weight: bold;
+
+    display: block;margin-left: 0px;margin-right: 0px;margin-top: 0px;
+}
+
+#div_respuestas {
+    background: white;
+}
+
+#item_respuesta {
+    border: 1px solid black;
+    height: 35px;
+    margin-bottom: 5px;
+    color: black;
+    font-size: 20px;
+}
+
+/* Panel de Usuarios */
+#contenedor_der {
+    float: left;
+    color: black;
+    height: 550px;
+    width: 128px;
+    border: 1px solid black;
+}
+
+#lista_usuarios {
+    font-weight: bold;
+    color: white;
+    background: #e91e63;
+    margin: auto;
+    text-align: center;
+    border-radius: 2px;
+    overflow: Auto;    
+    margin-bottom: 3px;
+
+}
+
+/* Barra de Estado */
+#div_status {
+    font-weight: bold;
+    color: white;
+    background: green;
+    margin: auto;
+    text-align: center;
+    border-radius: 2px;
+}
