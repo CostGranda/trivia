@@ -1,6 +1,79 @@
 var WebSocketServer = require('websocket').server;
 var http 			= require('http');
 var safeJson	    = require('safe-json-stringify');
+const axios = require('axios');
+
+
+let preguntas = [
+	{
+	  id:1,
+	  pregunta:"What are the advantages of a three- tier client-server configuration as compared with a single-tier or two-tier configuration."
+	},
+	{
+	  id:2,
+	  pregunta:"What type of abap dictionary view is created on the database during activation"
+	}
+  ]
+	
+  let respuestas = [
+	
+	  {
+		id:1,
+		respuesta:"a.simple scalability.",
+		correcta:""
+	  },
+	  {
+		id:1,
+		respuesta:"b.simpler administration.",
+		correcta:""
+	  },
+	  {
+		id:1,
+		respuesta:"c.simple processes.",
+		correcta:""
+	  },
+	  {
+		id:1,
+		respuesta:"d. none of the above.",
+		correcta: "x"
+	  },
+	  {
+		id:2,
+		respuesta:"a.Maintenace view",
+		correcta:""
+	  },
+	  {
+		id:2,
+		respuesta:"b.Projection view",
+		correcta:""
+	  },
+	  {
+		id:2,
+		respuesta:"c.Database view ",
+		correcta:""
+	  },
+	  {
+		id:2,
+		respuesta:"d.Activation view",
+		correcta:"x"
+	  }
+  ]
+  
+  
+  let array = []
+  preguntas.forEach( pregunta =>{
+	 let obj = {
+		consigna:pregunta.pregunta,
+		idpreg: pregunta.id,
+		opciones: respuestas
+		  .filter( res => res.id == pregunta.id )
+		  .map( item =>({item: item.respuesta.slice(0,1), texto: item.respuesta.slice(2)})),
+		respuesta: respuestas.find(item => item.correcta.length).respuesta.slice(0,1)
+	  }
+	
+	  array.push(obj)
+  })
+
 
 var juego = {
 				clientes   	   : new Array(),
