@@ -46,7 +46,7 @@ nav ul li {
 	position: relative;
   width: 70px;
   cursor: pointer;
-	background: #3bb3e0;
+	background: #1875D2;
 	text-transform: uppercase;
 	transition:all .4s ease-out;
 }
@@ -54,7 +54,7 @@ nav ul li {
 nav ul li:after {
 	position: absolute;
 	background: white;
-	color: #3bb3e0;
+	color: #1875D2;
 	top:0;
 	left: 70px;
 	width: 70px; height: 100%;
@@ -146,7 +146,7 @@ nav ul li div { position: relative; }
 /*door*/
 .front:after {
 	position: absolute;
-	background: #3bb3e0;
+	background: #1875D2;
 	width: 11px;
 	height: 13px;
 	bottom: 0;
@@ -180,7 +180,7 @@ nav ul li div { position: relative; }
 	position: absolute;
 	top: 10px;
 	left: 5px;
-	background: #3bb3e0;
+	background: #1875D2;
 }
 /*right eye*/
 .eyes:after {
@@ -190,13 +190,13 @@ nav ul li div { position: relative; }
 	position: absolute;
 	top: 0;
 	left: 14px;
-	background: #3bb3e0;
+	background: #1875D2;
 }
 
 .beard {
 	width: 32px;
 	height: 17px;
-	background: #3bb3e0;
+	background: #1875D2;
 	border:2px solid white;
 	position: absolute;
 	bottom: 0;
@@ -211,8 +211,8 @@ nav ul li div { position: relative; }
 	background: white;
 	width:6px;
 	height: 4px;
-	border-left:1px solid #3bb3e0;
-	border-right:1px solid #3bb3e0;
+	border-left:1px solid #1875D2;
+	border-right:1px solid #1875D2;
 }
 
 /*//work//*/
@@ -233,7 +233,7 @@ nav ul li div { position: relative; }
 	width: 25px;
 	height: 29px;
 	background: white;
-	border-top:4px solid #3bb3e0;
+	border-top:4px solid #1875D2;
 }
 
 .lines {
@@ -241,7 +241,7 @@ nav ul li div { position: relative; }
 	top: 36px;
 	left: 5px;
 	width: 11px;
-	box-shadow: 0 0 0 1px #3bb3e0;
+	box-shadow: 0 0 0 1px #1875D2;
 }
 
 .lines:after {
@@ -249,7 +249,7 @@ nav ul li div { position: relative; }
 	top: 4px;
 	left: 3px;
 	width: 14px;
-	box-shadow: 0 0 0 1px #3bb3e0;
+	box-shadow: 0 0 0 1px #1875D2;
 }
 
 .lines:nth-child(2) {
@@ -296,7 +296,7 @@ nav ul li div { position: relative; }
 	transform: rotate(180deg);
 	border-style: solid;
 	border-width: 0 16px 11px 16px;
-	border-color: transparent transparent #3bb3e0 transparent;
+	border-color: transparent transparent #1875D2 transparent;
 }
 
 .mail-top:after {

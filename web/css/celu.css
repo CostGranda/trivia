@@ -1,0 +1,61 @@
+body
+{
+    margin:0px;
+    padding:0px;
+}
+
+.boton
+{
+    width:80%;
+    height:30px;
+    padding:5px;
+    margin-bottom:10px;
+}
+
+
+#div_titulo
+{
+    font-size:20px;
+    background:#1875D2;
+    padding:8px;
+    width:100%;
+    color:white;
+    text-align:center;
+}
+
+#cont_respuestas{
+    
+    margin-top: 30px;
+
+}
+
+#conex_status
+{
+    font-size:15px;
+    background:green;
+    padding:8px;
+    width:100%;
+    color:white;
+    text-align:center;
+    font-weight: bold;
+}
+
+#titulo_ppal
+{
+    background:green;
+    padding:8px;
+    width:100%;
+    color:white;
+    text-align:center;
+}
+
+#botonera
+{
+    font-size:15px;
+    padding:8px;
+    width:100%;
+    color:white;
+    text-align:center;
+    border-top:1px dotted green;
+    padding-top:5px;
+}
