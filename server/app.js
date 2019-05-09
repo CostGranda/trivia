@@ -19,7 +19,7 @@ axios.get(URL).then(({ data }) => {
       idpreg: pregunta.ID_PREGUNTA,
       opciones: JSON.parse(respuestas)
         .filter(res => res.ID_PREGUNTA == pregunta.ID_PREGUNTA)
-        .map(item => ({ item: item.RESPUESTA.slice(0, 1), texto: item.RESPUESTA.slice(2) })),
+        .map(item => ({ item: item.RESPUESTA.slice(0, 1), texto: item.RESPUESTA.slice(3) })),
       respuesta: JSON.parse(respuestas).find(item => item.CORRECTA.length).RESPUESTA.slice(0, 1)
     }
 
@@ -218,6 +218,8 @@ axios.get(URL).then(({ data }) => {
   
   servidor.webSocket.on('request', function (request) {
     //Cuando recibo una conexion, la acepto y lo guardo en una variable.
+    console.log("Antes del error");
+    
     var connection = request.accept(null, request.origin);
   
     //Muestro la nueva conexion.
