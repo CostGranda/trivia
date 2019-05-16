@@ -23,26 +23,37 @@
 				var html = '<div id="item_respuesta">'+"<b>" + respuesta.item +")</b>"+" " + respuesta.texto + '</div>';
 				$("#div_respuestas").append(html);
 			}
-		}
+		}		
 
-		function dibujar_ganadores(nombres) {/*
+		function dibujar_ganadores(nombres) {			
 			if (nombres!=null)
 			{
-				$("#txt_pregunta").fadeOut("slow");
-				$("#txt_pregunta").fadeIn("slow");
-				$("#txt_pregunta").html("Ganadores!:<br>"+nombres);			
+				$("#winner").css('display','block');
+				var html = '<div id="lista_ganadores">' + nombres + '</div>';
+				$("#cont_winners").append(html);
+
+				// $("#cont_winners").fadeOut("slow");
+				// $("#cont_winners").fadeIn("slow");
+				// $("#cont_winners").html(nombres.usuario);	
+				// $("#winner").css('display','block');
 			}
 			else
 			{
-				$("#txt_pregunta").fadeOut("slow");
-				$("#txt_pregunta").fadeIn("slow");
-				$("#txt_pregunta").html("No hay ganadores!");
-			}*/
+				$("#winner").css('display','block');
+				var html = '<div id="lista_ganadores">' + nombres + '</div>';
+				$("#cont_winners").append(html);
+
+				// $("#cont_winners").fadeOut("slow");
+				// $("#cont_winners").fadeIn("slow");
+				// $("#cont_winners").html("No hay ganadores!");
+				// $("#winner").css('display','block');
+			}
 		}
 
 		function agregar_usuario(usuario) {
 			var html = '<div id="lista_usuarios">' + usuario + '</div>';
 			$("#cont_activos").append(html);
+			$("#activos").css('display','block');
 		}
 	</script>
 </head>
@@ -70,19 +81,26 @@
 			</div>
 			<!--Panel de usuarios-->
 			<div id="contenedor_der" class="col-sm-3">
-				<div class="row"> 
-					<!--Label de conexiones-->
-					<div id="status" class="col-sm-12">
-						<h5>Estado</h5>
-						<div id="div_status">							
-						</div>
+				<div class="row" style="overflow:auto;" > 
+					<!-- Label Ganador -->
+					<div id="winner" class="col-sm-12">
+						<h5>Winner</h5>	
+						<!--Lista de usuarios-->
+						<div id="cont_winners" class="col-sm-12">
+						</div>					
 					</div>
-					<hr>
-					<div id="activos" class="col-sm-12">
+					<!--Label de conexiones-->
+					<div id="activos" class="col-sm-12" style="display:none;">
 						<h5>Active Players</h5>	
 						<!--Lista de usuarios-->
 						<div id="cont_activos" class="col-sm-12">
 						</div>					
+					</div>
+					<hr>
+					<div id="status" class="col-sm-12">
+						<h5>Status</h5>
+						<div id="div_status">							
+						</div>
 					</div>
 				</div>
 			</div>
