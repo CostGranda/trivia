@@ -11,8 +11,6 @@ axios.get(URL).then(({ data }) => {
   const respuestas = data.respuestas
   let array = []
 
-  console.log("TYPE: ", typeof JSON.parse(preguntas))
-
   JSON.parse(preguntas).forEach(pregunta => {
     let obj = {
       consigna: pregunta.PREGUNTA,
@@ -20,7 +18,7 @@ axios.get(URL).then(({ data }) => {
       opciones: JSON.parse(respuestas)
         .filter(res => res.ID_PREGUNTA == pregunta.ID_PREGUNTA)
         .map(item => ({ item: item.RESPUESTA.slice(0, 1), texto: item.RESPUESTA.slice(3) })),
-      respuesta: JSON.parse(respuestas).find(item => item.CORRECTA.length).RESPUESTA.slice(0, 1)
+      respuesta: JSON.parse(respuestas).find(item => item.ID_PREGUNTA === pregunta.ID_PREGUNTA && item.CORRECTA === 'X').RESPUESTA.slice(0,1)
     }
 
     array.push(obj)
