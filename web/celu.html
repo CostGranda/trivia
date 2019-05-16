@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="css/cliente.css">
 	<link rel="stylesheet" href="css/menu.css">
 	<link rel="stylesheet" href="css/celu.css">
+	<link rel="stylesheet" href="css/buttons.css">
+	<link rel="stylesheet" href="css/alertifyjs/css/alertify.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -20,13 +22,15 @@
 		crossorigin="anonymous"></script>
 	<script src="./js/jquery.js"></script>
 	<script src="./js/sockets_celu.js"></script>
+	<script src="./css/alertifyjs/alertify.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body id="body_cliente" style="background-color: whitesmoke;">
 	<div class="container">
 		<div id="titulo" class="row">
 			<div class="col-sm-12">
-				<img src="./imgs/EncodeABAP.png" style="width: 350px;">
+				<img src="./imgs/EncodeABAP.png" style="width: 300px;">
 			</div>
 		</div>
 		<div id="cont_respuestas" class="row">
@@ -54,7 +58,9 @@
 
 		for (var i = 0; i <= lista.length - 1; i++) {
 			var tmp = lista[i];
-			var html_new = '<div class="col-md-6"><br><button type="button" id="' + tmp.item + '" class="a_demo_two" value="' + tmp.item + '">' + tmp.texto + '</button></div>';
+			var html_new = '<div class="col-md-6 "><br><button type="button" id="' + tmp.item + '" class="btn3d btn btn-default btn-lg scale-up-center" value="' + tmp.item + '">' + tmp.texto + '</button></div>';
+			// var html_new = '<div class="col-md-6"><br><button type="button" id="' + tmp.item + '" class="a_demo_two" value="' + tmp.item + '">' + tmp.texto + '</button></div>';
+
 			$("#botonera").append(html_new);
 
 			$("#" + tmp.item).click(function () {
@@ -73,8 +79,8 @@
 			var tmp = lista[i];
 
 			if (tmp.item == id) {
-				var html = '<input type="button" id="' + tmp.item + '" value="' + tmp.item + ')  ' + tmp.texto + '" class="boton" readonly>';
-				$("#botonera").append(html);
+				var html_new = '<div class="col-md-6"><br><button type="button" id="' + tmp.item + '" class="btn btn-primary btn-lg btn3d" value="' + tmp.item + '">' + tmp.texto + '</button></div>';
+				$("#botonera").append(html_new);
 			}
 		}
 	}

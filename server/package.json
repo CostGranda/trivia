@@ -11,6 +11,6 @@
   "dependencies": {
     "safe-json-stringify": "^1.2.0",
     "websocket": "^1.0.28",
-    "axios":"^0.18.0"
+    "axios": "^0.18.0"
   }
 }

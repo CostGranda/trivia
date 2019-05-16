@@ -207,7 +207,7 @@ axios.get(URL).then(({ data }) => {
   
   servidor.webServer.listen(3000, function () {
     console.log("***************************");
-    console.log("*  GAMESERVER 3 INICIADO  *");
+    console.log("*  ENCODE - CONNECTED  *");
     console.log("***************************");
   });
   
